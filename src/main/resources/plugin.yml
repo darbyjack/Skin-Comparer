@@ -1,0 +1,5 @@
+name: Skin-Comparer
+version: '${version}'
+main: me.glaremasters.skincomparer.SkinComparer
+api-version: 1.17
+description: Compare Skins against images
