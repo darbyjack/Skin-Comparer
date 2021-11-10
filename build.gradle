@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.0"
+    id "xyz.jpenilla.run-paper" version "1.0.4"
 }
 
 group = 'me.glaremasters'
@@ -19,6 +21,19 @@ repositories {
 
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+
+    implementation 'com.github.romankh3:image-comparison:4.4.0'
+}
+
+shadowJar {
+    relocate("com.github.romankh3", "me.glaremasters.skincomparer.libs.comp")
+    archiveFileName = "SkinComparer.jar"
+}
+
+tasks {
+    runServer {
+        minecraftVersion("1.17.1")
+    }
 }
 
 processResources {
