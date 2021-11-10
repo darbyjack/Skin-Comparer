@@ -41,6 +41,10 @@ public final class SkinComparer extends JavaPlugin implements Listener {
         final Player player = event.getPlayer();
         final String texture = getPlayerSkin(player);
 
+        if (texture == null) {
+            return;
+        }
+
         if (blocked.contains(texture)) {
             getServer().getScheduler().runTaskLater(this, () -> player.kick(Component.text("Bad Skin")), 10L);
             return;
