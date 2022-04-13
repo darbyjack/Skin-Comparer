@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id "com.github.johnrengelman.shadow" version "7.1.0"
-    id "xyz.jpenilla.run-paper" version "1.0.4"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "xyz.jpenilla.run-paper" version "1.0.6"
 }
 
 group = 'me.glaremasters'
@@ -10,8 +10,7 @@ version = '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
     maven {
-        name = 'papermc-repo'
-        url = 'https://papermc.io/repo/repository/maven-public/'
+        url = uri("https://papermc.io/repo/repository/maven-public/")
     }
     maven {
         name = 'sonatype'
@@ -20,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 
     implementation 'com.github.romankh3:image-comparison:4.4.0'
 }
